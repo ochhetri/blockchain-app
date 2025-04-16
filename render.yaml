@@ -9,7 +9,7 @@ services:
     startCommand: "gunicorn app:create_app()" # Use the factory function
     envVars:
       - key: PYTHON_VERSION
-        value: 3.13.2 # Specify your Python version
+        value: 3.10 # Specify your Python version
       - key: SEPOLIA_RPC_URL
         sync: false # Keep this secret, set in Render dashboard
       # Optional: Set production CORS origin here if needed
