@@ -1,0 +1,17 @@
+# render.yaml (in project root)
+services:
+  - type: web # Flask API Service
+    name: blockchain-api # Choose a name for your service
+    env: python
+    rootDir: backend # Specify the backend directory
+    plan: free # Use the free instance type
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:create_app()" # Use the factory function
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.2 # Specify your Python version
+      - key: SEPOLIA_RPC_URL
+        sync: false # Keep this secret, set in Render dashboard
+      # Optional: Set production CORS origin here if needed
+      # - key: CORS_ORIGIN
+      #   value: https://your-netlify-app-name.netlify.app # Replace later
