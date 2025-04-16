@@ -6,7 +6,7 @@ services:
     rootDir: backend # Specify the backend directory
     plan: free # Use the free instance type
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn app:create_app()" # Use the factory function
+    startCommand: "gunicorn app:create_app" # Use the factory function
     envVars:
       - key: PYTHON_VERSION
         value: 3.10 # Specify your Python version
